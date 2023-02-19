@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="WhacAMole.MainPage"
+             BackgroundImageSource="GrassBackground.jpg">
+
+    <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+
+        <Label Text="WHAC-A-MOLE" FontSize="50" HorizontalOptions="Center" BackgroundColor="Beige" Margin="0, 0, 0, 50"/>
+
+        <StackLayout x:Name="GameStatus" Orientation="Horizontal" IsVisible="true" BackgroundColor="Beige" Padding="5">
+            <Label Text="Time: " FontAttributes="Bold"/>
+            <Label x:Name="LblCountDown" Text=""/>
+            <Label Text="Grid Size:" FontAttributes="Bold" Margin="20, 0, 0, 0"/>
+            <Label x:Name="DisplayGridSize" Text=""/>
+            <Label Text="Score: " FontAttributes="Bold" Margin="50, 0, 0, 0"/>
+            <Label x:Name="LblScore" Text="0"/>
+        </StackLayout>
+
+
+        <Grid x:Name="GridMoles4" WidthRequest="350" HeightRequest="350" 
+               IsVisible="true" IsEnabled="true" Background="GridDirtBackground.jpg">
+
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Image Grid.RowSpan="4" Grid.ColumnSpan="4" Source="GridDirtBackground.jpg"/>
+
+        </Grid>
+
+
+        <Grid x:Name="GridMoles5" WidthRequest="350" HeightRequest="350"
+               IsVisible="false" IsEnabled="false">
+
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Image Grid.RowSpan="5" Grid.ColumnSpan="5" Source="GridDirtBackground.jpg"/>
+
+        </Grid>
+
+
+        <StackLayout x:Name="HighscoreDisplay" Orientation="Horizontal" IsEnabled="False" IsVisible="false" BackgroundColor="Beige" Padding="20">
+            <StackLayout Margin="0, 0, 100, 0">
+                <Label Text="4 x 4 Highscores" FontAttributes="Bold"/>
+                <Label x:Name="HighScores4x4Display" Text=""/>
+            </StackLayout>
+
+            <StackLayout>
+                <Label Text="5 x 5 Highscores" FontAttributes="Bold"/>
+                <Label x:Name="HighScores5x5Display" Text=""/>
+            </StackLayout>
+
+        </StackLayout>
+
+        <StackLayout Orientation="Horizontal" BackgroundColor="Beige">
+
+            <Button x:Name="BtnHighScores" Text="High Scores"
+                    HorizontalOptions="Center" 
+                    Clicked="BtnHighScores_Clicked"/>
+
+            <Button x:Name="BtnSwitch" Text="5x5"
+                    HorizontalOptions="Center" Margin="40, 0, 0, 0"
+                    Clicked="BtnSwitch_Clicked"/>
+
+            <Button x:Name="BtnRestart" Text="Start"
+                    HorizontalOptions="Center" Margin="5, 0, 0, 0"
+                    Clicked="BtnRestart_Clicked"/>
+
+        </StackLayout>
+
+    </StackLayout>
+
+</ContentPage>
